@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get install --yes libnetcdf-dev libnetcdf-c++4-dev libnetcdff-dev
       - name: Build project
         run: |
-          cmake -DCMAKE_BUILD_TYPE=Release -S . -B .
+          cmake -S . -B .
           cmake --build .
       - name: Run tests
         run: ctest

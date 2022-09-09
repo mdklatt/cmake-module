@@ -1,6 +1,7 @@
 project(find_netcdf LANGUAGES C CXX Fortran)
 find_package(NetCDF REQUIRED COMPONENTS CXX F90 F77)
 
+set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(test_netcdf_c test_netcdf_c.c)
 target_link_libraries(test_netcdf_c PRIVATE ${NETCDF_LIBRARIES})

@@ -1,6 +1,6 @@
 /**
-* Test the availability of the netCDF C library.
-*/
+ * Test the availability of the netCDF C library.
+ */
 #include <stdlib.h>
 #include <assert.h>
 #include <netcdf.h>
