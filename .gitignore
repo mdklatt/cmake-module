@@ -1,0 +1,23 @@
+# Ignore C++ build artifacts.
+
+build/
+*.o
+*.a
+*.so
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
+
+
+# Ignore IDE settings.
+
+.idea/
+.project/
+.pydevproject/
+nbproject/
+
+
+# Ignore OS metadata files.
+
+.DS_Store
+Thumbs.db
