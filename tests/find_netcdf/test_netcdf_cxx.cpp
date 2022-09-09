@@ -1,5 +1,5 @@
 /**
- * Use the netCDF C++ library.
+ * Test the availability of the netCDF C++ library.
  */
 #include <cstdlib>
 #include <cassert>
