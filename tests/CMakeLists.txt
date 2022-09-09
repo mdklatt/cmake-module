@@ -1,2 +1,2 @@
 add_subdirectory(DebugASanBuildType)
-add_subdirectory(find_netcdf)
+add_subdirectory(FindNetCDF)
