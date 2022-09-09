@@ -7,7 +7,6 @@ RUN apt-get update &&\
         gdb \
         make \
         cmake \
-        python3 \
         libnetcdf-dev \
         libnetcdf-c++4-dev \
         libnetcdff-dev &&\
