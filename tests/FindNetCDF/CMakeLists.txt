@@ -1,4 +1,4 @@
-project(find_netcdf LANGUAGES C CXX Fortran)
+project(FindNetCDF LANGUAGES C CXX Fortran)
 find_package(NetCDF REQUIRED COMPONENTS CXX F90 F77)
 
 set(CMAKE_BUILD_TYPE Debug)

@@ -1,2 +1,3 @@
 add_subdirectory(DebugASanBuildType)
 add_subdirectory(FindNetCDF)
+add_subdirectory(FindUDUNITS2)

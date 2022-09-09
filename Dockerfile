@@ -9,7 +9,8 @@ RUN apt-get update &&\
         cmake \
         libnetcdf-dev \
         libnetcdf-c++4-dev \
-        libnetcdff-dev &&\
+        libnetcdff-dev \
+        libudunits2-dev &&\
     apt-get autoremove --yes &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 WORKDIR /tmp/cmake-module

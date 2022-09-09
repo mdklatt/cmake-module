@@ -14,7 +14,7 @@ jobs:
       - name: Check out project
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: sudo apt-get install --yes libnetcdf-dev libnetcdf-c++4-dev libnetcdff-dev
+        run: sudo apt-get install --yes libnetcdf-dev libnetcdf-c++4-dev libnetcdff-dev libudunits2-dev
       - name: Build project
         run: |
           cmake -S . -B .
