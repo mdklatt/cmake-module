@@ -4,18 +4,16 @@ find_package(NetCDF REQUIRED COMPONENTS CXX F90 F77)
 set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(test_netcdf_c test_netcdf_c.c)
-target_link_libraries(test_netcdf_c PRIVATE ${NETCDF_LIBRARIES})
+target_link_libraries(test_netcdf_c PRIVATE NetCDF::netcdf)
 
 add_executable(test_netcdf_cxx test_netcdf_cxx.cpp)
-target_link_libraries(test_netcdf_cxx PRIVATE ${NETCDF_LIBRARIES})
+target_link_libraries(test_netcdf_cxx PRIVATE NetCDF::netcdf)
 
 add_executable(test_netcdf_f90 test_netcdf_f90.f90)
-target_link_libraries(test_netcdf_f90 PRIVATE ${NETCDF_LIBRARIES})
-target_include_directories(test_netcdf_f90 PRIVATE ${NETCDF_INCLUDE_DIRS})  # FIXME: FindNetCDF should set this
+target_link_libraries(test_netcdf_f90 PRIVATE NetCDF::netcdf)
 
 add_executable(test_netcdf_f77 test_netcdf_f77.f)
-target_link_libraries(test_netcdf_f77 PRIVATE ${NETCDF_LIBRARIES})
-target_include_directories(test_netcdf_f77 PRIVATE ${NETCDF_INCLUDE_DIRS})  # FIXME: FindNetCDF should set this
+target_link_libraries(test_netcdf_f77 PRIVATE NetCDF::netcdf)
 
 
 foreach(exe test_netcdf_c test_netcdf_cxx test_netcdf_f90 test_netcdf_f77)

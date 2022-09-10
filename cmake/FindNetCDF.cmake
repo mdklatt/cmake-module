@@ -1,6 +1,3 @@
-# TODO: Add exported targets, e.g. NetCDF::NetCDF
-
-## <https://github.com/Kitware/VTK/blob/master/CMake/FindNetCDF.cmake>
 # - Find NetCDF
 # Find the native NetCDF includes and library
 #
@@ -116,6 +113,20 @@ set (NETCDF_INCLUDE_DIRS ${NetCDF_includes})
 
 # handle the QUIETLY and REQUIRED arguments and set NETCDF_FOUND to TRUE if
 # all listed variables are TRUE
-include (FindPackageHandleStandardArgs)
-find_package_handle_standard_args (NetCDF
-        DEFAULT_MSG NETCDF_LIBRARIES NETCDF_INCLUDE_DIRS NETCDF_HAS_INTERFACES)
+
+include(FindPackageHandleStandardArgs)
+
+find_package_handle_standard_args(NETCDF
+REQUIRED_VARS  # set UDUNITS_FOUND only if all these files were found
+    NETCDF_INCLUDE_DIRS
+    NETCDF_LIBRARIES
+)
+
+set(target NetCDF::netcdf)
+if(NETCDF_FOUND AND NOT TARGET ${target})
+    add_library(${target} IMPORTED INTERFACE)
+    set_target_properties(${target} PROPERTIES
+        INTERFACE_INCLUDE_DIRECTORIES "${NETCDF_INCLUDE_DIRS}"
+        INTERFACE_LINK_LIBRARIES "${NETCDF_LIBRARIES}"
+    )
+endif()
