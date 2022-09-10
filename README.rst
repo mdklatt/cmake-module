@@ -31,9 +31,15 @@ in `CMAKE_MODULE_PATH`_.
 
 FindNetCDF
 ----------
-Find the installed `NetCDF`_ libraries, with language support for C, C++, and
-Fortran.
+Find the installed `NetCDF`_ libraries, with ``COMPONENTS`` for additional
+languages (``CXX``, ``F77``, and ``F90``). The package exports the
+``NetCDF::netcdf`` target.
 
+
+FindUDUNITS2
+------------
+Find the installed UDUNITS2 library. The package exports the
+``UDUNITS2::udunits2`` target.
 
 
 Testing
@@ -61,3 +67,4 @@ A Docker image is used to test the modules.
 .. _AddressSanitizer: https://github.com/google/sanitizers/wiki/AddressSanitizer
 .. _find module: https://cmake.org/cmake/help/latest/manual/cmake-developer.7.html#find-modules
 .. _NetCDF: https://www.unidata.ucar.edu/software/netcdf
+.. _UDUNITS2: https://www.unidata.ucar.edu/software/udunits
