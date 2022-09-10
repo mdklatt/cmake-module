@@ -32,20 +32,3 @@ if(UDUNITS2_FOUND AND NOT TARGET UDUNITS2::udunits2)
             INTERFACE_LINK_LIBRARIES "${UDUNITS2_LIBRARY}"
             )
 endif()
-find_package(PkgConfig)
-pkg_check_modules(PC_UDUNITS2 QUIET UDUNITS2)
-
-
-find_path(UDUNITS2_INCLUDE_DIR
-        NAMES udunits2/udunits2.h
-        PATHS ${PC_UDUNITS2_INCLUDE_DIRS}
-        )
-
-find_library(UDUNITS2_LIBRARY
-        udunits2
-        PATHS ${PC_UDUNITS2_LIBRARIES}
-        )
-
-set(UDUNITS2_VERSION ${PC_UDUNITS2_VERSION})
-
-mark_as_advanced(UDUNITS2_FOUND UDUNITS2_INCLUDE_DIR UDUNITS2_VERSION)
