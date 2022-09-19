@@ -16,7 +16,7 @@ foreach(exe test_asan_c test_asan_cxx)
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     )
     set_tests_properties("${exe}" PROPERTIES
-        # Expecting ASAN to report leaks in the test executables.
+        # Expecting ASan to report leaks in the test executables.
         PASS_REGULAR_EXPRESSION "ERROR: LeakSanitizer"
     )
 endforeach()

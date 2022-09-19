@@ -15,5 +15,5 @@ int main(void) {
     // Intentional memory leak so that AddressSanitizer reports an error.
     const int* ptr = malloc(sizeof(int));
     assert(ptr);
-    return EXIT_SUCCESS;  // ASAN will override with an error status
+    return EXIT_SUCCESS;  // ASan will override with an error status
 }
